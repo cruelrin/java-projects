@@ -1,0 +1,32 @@
+package com.company;
+import java.util.HashMap; //add the library, that create a key-value data structure
+import java.util.Scanner;
+
+class HashMapExample {
+    public static void main(String[] args) {
+
+        HashMap<String, String> map = new HashMap<>(); //create a hashmap with string key and value
+        Scanner sc = new Scanner(System.in);
+
+        //create scanner's objects, so we can input elements
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+
+        //create a loop that, for each iteration, asks for a key and value, and after that put them into a hashmap with "put" method
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter the key: ");
+            String key = sc.next();
+
+            System.out.print("Enter the value: ");
+            String value = sc.next();
+
+            map.put(key, value);
+        }
+
+        System.out.println("Keys and values in HashMap: ");
+        //a loop iterate over the keys in the hashmap, and  prints each key-value pair with "get" method
+        for (String key : map.keySet()) {
+            System.out.println(key + " : " + map.get(key));
+        }
+    }
+}
